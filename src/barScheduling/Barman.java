@@ -12,6 +12,8 @@
 
 package barScheduling;
 
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Comparator;
 import java.util.concurrent.ConcurrentHashMap;
@@ -336,7 +338,31 @@ public class Barman extends Thread {
     
     
     private void recordCompletedOrder(DrinkOrder order) throws IOException {
-    	// THIS IS THE ONLY FUNCTION YOU MAY CHANGE
+        // create results folder if missing
+        File dir = new File("results"); 
+        dir.mkdirs();  
+        // build file path using runId :. unique file per run
+        File file = new File("results/" + SchedulingSimulation.runId + ".csv");
+        boolean isNewFile = !file.exists();  // if new file, write header first
+
+        FileWriter fw = new FileWriter(file, true);  // open in append mode
+        // if first row, write header
+        if (isNewFile) {
+            fw.write("scheduler,patronID,drink,execTime,waitTime,turnaroundTime,queueLevel\n");
+        }
+
+        // write data row for completed order
+        fw.write(
+            schedulerName + "," +
+            order.getOrderer() + "," +
+            order.getDrinkName() + "," +
+            order.getExecutionTime() + "," +
+            order.getWaitingTime() + "," +
+            order.getTurnaroundTime() + "," +
+            order.getQueueLevel() + "\n"
+        );
+
+        fw.close();
     }
 
 }
