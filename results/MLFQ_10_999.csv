@@ -1,0 +1,46 @@
+scheduler,patronID,drink,execTime,waitTime,turnaroundTime,queueLevel
+MLFQ,0,Red Wine,25,4,34,0
+MLFQ,1,Vodka shot,20,1,26,0
+MLFQ,1,Margarita,75,1,78,1
+MLFQ,2,Draft Beer,50,2,53,0
+MLFQ,1,Beer,25,30,60,2
+MLFQ,2,Bloody Mary,70,1,76,1
+MLFQ,2,Martini,60,1,66,2
+MLFQ,3,Tequila shot,20,1,25,0
+MLFQ,3,Gin and Tonic,40,1,44,1
+MLFQ,3,Cosmopolitan,65,1,68,2
+MLFQ,3,Tequila shot,20,1,26,2
+MLFQ,3,Margarita,75,0,79,2
+MLFQ,3,Draft Beer,50,1,53,2
+MLFQ,3,Tequila shot,20,1,25,2
+MLFQ,4,Cider,25,1,29,0
+MLFQ,5,Red Wine,25,1,30,0
+MLFQ,4,White Wine,25,0,31,1
+MLFQ,5,White Wine,25,1,28,1
+MLFQ,6,Draft Beer,50,0,50,0
+MLFQ,7,Martini,60,8,71,0
+MLFQ,8,Cosmopolitan,65,8,75,0
+MLFQ,6,White Wine,25,27,57,1
+MLFQ,4,Cider,25,212,242,2
+MLFQ,8,Beer,25,8,38,1
+MLFQ,5,Bloody Mary,70,139,214,2
+MLFQ,4,Margarita,75,4,85,2
+MLFQ,6,Bloody Mary,70,65,135,2
+MLFQ,8,White Wine,25,128,158,2
+MLFQ,5,Mojito,75,31,110,2
+MLFQ,4,Tequila shot,20,99,120,2
+MLFQ,4,B52,200,1,204,2
+MLFQ,9,Cosmopolitan,65,62,131,0
+MLFQ,6,Draft Beer,50,257,310,2
+MLFQ,9,Margarita,75,2,82,1
+MLFQ,8,Draft Beer,50,364,419,2
+MLFQ,5,Cider,25,379,409,2
+MLFQ,4,Draft Beer,50,281,336,2
+MLFQ,6,Beer,25,120,150,2
+MLFQ,9,Martini,60,90,154,2
+MLFQ,5,B52,200,50,250,2
+MLFQ,6,Cider,25,165,190,2
+MLFQ,9,B52,200,115,319,2
+MLFQ,9,White Wine,25,1,29,2
+MLFQ,9,Cider,25,0,27,2
+MLFQ,9,Bloody Mary,70,1,73,2

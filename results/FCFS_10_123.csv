@@ -1,0 +1,42 @@
+scheduler,patronID,drink,execTime,waitTime,turnaroundTime,queueLevel
+FCFS,0,Beer,25,0,29,0
+FCFS,0,White Wine,25,0,29,0
+FCFS,1,Margarita,75,0,80,0
+FCFS,0,B52,200,0,204,0
+FCFS,1,Tequila shot,20,131,156,0
+FCFS,1,Beer,25,1,29,0
+FCFS,1,Cosmopolitan,65,0,68,0
+FCFS,1,Draft Beer,50,0,52,0
+FCFS,2,White Wine,25,45,71,0
+FCFS,3,Pina Colada,100,8,112,0
+FCFS,4,B52,200,38,243,0
+FCFS,1,Gin and Tonic,40,234,274,0
+FCFS,2,Beer,25,198,225,0
+FCFS,5,White Wine,25,193,222,0
+FCFS,3,Draft Beer,50,181,232,0
+FCFS,4,Cosmopolitan,65,142,208,0
+FCFS,1,White Wine,25,64,93,0
+FCFS,5,White Wine,25,0,27,0
+FCFS,3,Cosmopolitan,65,26,95,0
+FCFS,4,Gin and Tonic,40,78,122,0
+FCFS,6,Beer,25,107,137,0
+FCFS,1,Mojito,75,26,106,0
+FCFS,3,Gin and Tonic,40,102,147,0
+FCFS,5,White Wine,25,119,149,0
+FCFS,6,Martini,60,56,121,0
+FCFS,3,Martini,60,0,63,0
+FCFS,5,Pina Colada,100,0,102,0
+FCFS,6,Draft Beer,50,76,130,0
+FCFS,3,Vodka shot,20,52,75,0
+FCFS,7,Red Wine,25,50,80,0
+FCFS,3,Vodka shot,20,27,49,0
+FCFS,5,Beer,25,12,42,0
+FCFS,6,Tequila shot,20,7,28,0
+FCFS,5,Cider,25,0,28,0
+FCFS,5,Mojito,75,0,77,0
+FCFS,8,Tequila shot,20,0,22,0
+FCFS,8,Pina Colada,100,0,101,0
+FCFS,9,Cosmopolitan,65,96,165,0
+FCFS,9,White Wine,25,0,30,0
+FCFS,8,Vodka shot,20,31,53,0
+FCFS,8,Pina Colada,100,0,105,0

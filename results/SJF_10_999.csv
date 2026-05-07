@@ -1,0 +1,46 @@
+scheduler,patronID,drink,execTime,waitTime,turnaroundTime,queueLevel
+SJF,0,Red Wine,25,0,29,0
+SJF,1,Vodka shot,20,0,23,0
+SJF,1,Margarita,75,0,79,0
+SJF,2,Draft Beer,50,1,56,0
+SJF,1,Beer,25,41,70,0
+SJF,2,Bloody Mary,70,5,80,0
+SJF,2,Martini,60,0,60,0
+SJF,3,Tequila shot,20,1,26,0
+SJF,3,Gin and Tonic,40,0,42,0
+SJF,3,Cosmopolitan,65,0,70,0
+SJF,3,Tequila shot,20,0,25,0
+SJF,3,Margarita,75,0,77,0
+SJF,3,Draft Beer,50,0,51,0
+SJF,3,Tequila shot,20,0,24,0
+SJF,4,Cider,25,0,26,0
+SJF,5,Red Wine,25,0,27,0
+SJF,4,White Wine,25,0,29,0
+SJF,5,White Wine,25,0,30,0
+SJF,4,Draft Beer,50,0,55,0
+SJF,6,Cider,25,50,78,0
+SJF,7,Martini,60,33,95,0
+SJF,8,Cosmopolitan,65,34,104,0
+SJF,4,White Wine,25,60,87,0
+SJF,6,Beer,25,60,87,0
+SJF,5,Bloody Mary,70,131,204,0
+SJF,8,Margarita,75,79,155,0
+SJF,4,White Wine,25,27,56,0
+SJF,6,Bloody Mary,70,78,153,0
+SJF,8,Tequila shot,20,25,50,0
+SJF,5,Mojito,75,56,134,0
+SJF,4,Draft Beer,50,30,84,0
+SJF,6,Draft Beer,50,6,61,0
+SJF,5,Cider,25,1,28,0
+SJF,8,B52,200,214,417,0
+SJF,5,Beer,25,102,129,0
+SJF,4,Draft Beer,50,216,271,0
+SJF,9,Cosmopolitan,65,276,344,0
+SJF,6,Margarita,75,284,360,0
+SJF,9,Martini,60,24,86,0
+SJF,6,B52,200,0,204,0
+SJF,9,Cider,25,112,141,0
+SJF,9,B52,200,1,204,0
+SJF,9,White Wine,25,0,30,0
+SJF,9,Cider,25,0,29,0
+SJF,9,Bloody Mary,70,0,72,0

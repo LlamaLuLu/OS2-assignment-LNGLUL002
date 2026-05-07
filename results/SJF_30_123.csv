@@ -1,0 +1,128 @@
+scheduler,patronID,drink,execTime,waitTime,turnaroundTime,queueLevel
+SJF,0,Beer,25,0,30,0
+SJF,0,White Wine,25,0,30,0
+SJF,0,Margarita,75,0,80,0
+SJF,0,B52,200,1,203,0
+SJF,1,Tequila shot,20,64,89,0
+SJF,0,Beer,25,16,44,0
+SJF,1,Cosmopolitan,65,25,96,0
+SJF,2,Draft Beer,50,66,120,0
+SJF,0,White Wine,25,21,50,0
+SJF,3,Pina Colada,100,0,104,0
+SJF,2,B52,200,64,269,0
+SJF,5,Beer,25,159,189,0
+SJF,3,White Wine,25,114,141,0
+SJF,2,White Wine,25,47,73,0
+SJF,8,White Wine,25,2,28,0
+SJF,4,Gin and Tonic,40,305,350,0
+SJF,6,Draft Beer,50,216,271,0
+SJF,3,Gin and Tonic,40,1,45,0
+SJF,7,Cosmopolitan,65,271,337,0
+SJF,8,Beer,25,59,88,0
+SJF,6,White Wine,25,39,69,0
+SJF,9,Gin and Tonic,40,108,153,0
+SJF,7,Martini,60,53,118,0
+SJF,10,Martini,60,20,81,0
+SJF,9,Vodka shot,20,13,34,0
+SJF,6,Draft Beer,50,44,98,0
+SJF,7,Red Wine,25,28,54,0
+SJF,5,Cosmopolitan,65,529,595,0
+SJF,12,Vodka shot,20,61,86,0
+SJF,13,Tequila shot,20,24,47,0
+SJF,10,Beer,25,107,134,0
+SJF,13,Tequila shot,20,24,49,0
+SJF,6,Cider,25,95,122,0
+SJF,13,White Wine,25,25,51,0
+SJF,14,Cosmopolitan,65,79,149,0
+SJF,10,Vodka shot,20,46,69,0
+SJF,4,Mojito,75,713,792,0
+SJF,10,Beer,25,76,106,0
+SJF,13,Cider,25,52,80,0
+SJF,16,Bloody Mary,70,4,77,0
+SJF,4,Vodka shot,20,22,47,0
+SJF,12,Mojito,75,462,538,0
+SJF,4,Tequila shot,20,73,96,0
+SJF,11,Pina Colada,100,788,890,0
+SJF,16,Red Wine,25,75,103,0
+SJF,18,Gin and Tonic,40,108,153,0
+SJF,4,Bloody Mary,70,172,248,0
+SJF,11,Bloody Mary,70,25,98,0
+SJF,18,Cider,25,34,63,0
+SJF,5,Pina Colada,100,892,992,0
+SJF,4,Gin and Tonic,40,54,95,0
+SJF,18,Draft Beer,50,39,90,0
+SJF,11,Martini,60,74,139,0
+SJF,19,Gin and Tonic,40,16,61,0
+SJF,18,Red Wine,25,8,33,0
+SJF,20,Cider,25,4,34,0
+SJF,4,Draft Beer,50,106,160,0
+SJF,11,Tequila shot,20,43,66,0
+SJF,22,Beer,25,49,79,0
+SJF,23,Cider,25,36,66,0
+SJF,18,White Wine,25,19,49,0
+SJF,4,White Wine,25,13,43,0
+SJF,20,Draft Beer,50,101,156,0
+SJF,23,Red Wine,25,14,40,0
+SJF,19,Martini,60,230,295,0
+SJF,24,Cosmopolitan,65,93,162,0
+SJF,27,Cider,25,8,34,0
+SJF,26,Gin and Tonic,40,69,111,0
+SJF,19,Vodka shot,20,27,49,0
+SJF,24,Draft Beer,50,39,93,0
+SJF,27,Tequila shot,20,19,42,0
+SJF,19,White Wine,25,74,103,0
+SJF,28,White Wine,25,61,91,0
+SJF,26,Cosmopolitan,65,50,119,0
+SJF,24,Cosmopolitan,65,51,117,0
+SJF,26,Beer,25,13,40,0
+SJF,28,Vodka shot,20,9,30,0
+SJF,25,Bloody Mary,70,527,602,0
+SJF,28,Gin and Tonic,40,73,118,0
+SJF,23,Bloody Mary,70,522,597,0
+SJF,27,Bloody Mary,70,442,517,0
+SJF,25,Tequila shot,20,43,65,0
+SJF,29,Red Wine,25,77,106,0
+SJF,25,Vodka shot,20,26,47,0
+SJF,28,Red Wine,25,115,145,0
+SJF,25,Vodka shot,20,27,48,0
+SJF,23,Cider,25,46,76,0
+SJF,25,Tequila shot,20,27,49,0
+SJF,27,Draft Beer,50,24,74,0
+SJF,29,Gin and Tonic,40,23,66,0
+SJF,23,Red Wine,25,14,40,0
+SJF,15,Pina Colada,100,2521,2626,0
+SJF,27,White Wine,25,76,106,0
+SJF,10,Pina Colada,100,2391,2496,0
+SJF,23,Tequila shot,20,89,114,0
+SJF,13,Pina Colada,100,2493,2598,0
+SJF,23,White Wine,25,103,133,0
+SJF,10,Beer,25,39,66,0
+SJF,27,Draft Beer,50,143,198,0
+SJF,22,Pina Colada,100,1689,1794,0
+SJF,13,White Wine,25,97,124,0
+SJF,27,Margarita,75,29,109,0
+SJF,19,Pina Colada,100,1340,1445,0
+SJF,13,Cosmopolitan,65,35,105,0
+SJF,22,Mojito,75,161,243,0
+SJF,19,Tequila shot,20,30,54,0
+SJF,13,Tequila shot,20,55,79,0
+SJF,15,Pina Colada,100,786,891,0
+SJF,22,Margarita,75,46,124,0
+SJF,17,B52,200,3530,3735,0
+SJF,22,Margarita,75,122,201,0
+SJF,17,Martini,60,70,135,0
+SJF,16,B52,200,3396,3599,0
+SJF,17,Bloody Mary,70,90,164,0
+SJF,16,Cider,25,65,91,0
+SJF,21,B52,200,3299,3501,0
+SJF,17,Mojito,75,79,159,0
+SJF,25,B52,200,2262,2467,0
+SJF,17,Vodka shot,20,91,116,0
+SJF,15,B52,200,1134,1339,0
+SJF,16,B52,200,621,825,0
+SJF,15,Draft Beer,50,194,246,0
+SJF,21,B52,200,766,971,0
+SJF,15,Draft Beer,50,102,157,0
+SJF,21,White Wine,25,45,75,0
+SJF,15,Gin and Tonic,40,0,42,0
+SJF,15,Draft Beer,50,0,51,0

@@ -1,0 +1,42 @@
+scheduler,patronID,drink,execTime,waitTime,turnaroundTime,queueLevel
+MLFQ,0,Beer,25,4,34,0
+MLFQ,0,White Wine,25,0,30,1
+MLFQ,1,Margarita,75,2,80,0
+MLFQ,0,B52,200,1,202,2
+MLFQ,1,Tequila shot,20,131,156,1
+MLFQ,1,Beer,25,1,26,2
+MLFQ,1,Cosmopolitan,65,1,71,2
+MLFQ,1,Draft Beer,50,0,52,2
+MLFQ,2,White Wine,25,52,81,0
+MLFQ,3,Pina Colada,100,17,122,0
+MLFQ,4,B52,200,46,251,0
+MLFQ,5,White Wine,25,127,154,0
+MLFQ,2,Beer,25,180,209,1
+MLFQ,3,Draft Beer,50,142,194,1
+MLFQ,4,Cosmopolitan,65,100,166,1
+MLFQ,1,Gin and Tonic,40,418,463,2
+MLFQ,5,White Wine,25,44,74,1
+MLFQ,3,White Wine,25,41,68,2
+MLFQ,4,Cosmopolitan,65,52,121,2
+MLFQ,6,Gin and Tonic,40,69,114,0
+MLFQ,1,Beer,25,60,85,2
+MLFQ,5,Mojito,75,18,96,2
+MLFQ,3,Gin and Tonic,40,67,112,2
+MLFQ,6,White Wine,25,37,63,1
+MLFQ,1,Martini,60,47,109,2
+MLFQ,5,Martini,60,22,85,2
+MLFQ,3,Pina Colada,100,44,146,2
+MLFQ,6,Draft Beer,50,75,129,2
+MLFQ,7,Red Wine,25,3,32,0
+MLFQ,5,Vodka shot,20,74,98,2
+MLFQ,5,Vodka shot,20,1,22,2
+MLFQ,3,Beer,25,14,44,2
+MLFQ,5,Tequila shot,20,28,53,2
+MLFQ,6,Cider,25,37,63,2
+MLFQ,3,Mojito,75,1,81,2
+MLFQ,8,Tequila shot,20,1,21,0
+MLFQ,8,Pina Colada,100,1,106,1
+MLFQ,9,Cosmopolitan,65,104,172,0
+MLFQ,9,Vodka shot,20,0,23,1
+MLFQ,8,White Wine,25,25,55,2
+MLFQ,8,Pina Colada,100,1,105,2

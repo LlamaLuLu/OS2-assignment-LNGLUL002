@@ -1,0 +1,43 @@
+scheduler,patronID,drink,execTime,waitTime,turnaroundTime,queueLevel
+MLFQ,0,White Wine,25,4,34,0
+MLFQ,0,Cider,25,1,31,1
+MLFQ,1,Cider,25,1,31,0
+MLFQ,0,B52,200,0,205,2
+MLFQ,2,Bloody Mary,70,111,181,0
+MLFQ,1,Tequila shot,20,240,263,1
+MLFQ,0,White Wine,25,84,114,2
+MLFQ,1,Martini,60,26,89,2
+MLFQ,2,Red Wine,25,1,27,1
+MLFQ,0,Martini,60,0,65,2
+MLFQ,1,Beer,25,42,72,2
+MLFQ,2,Beer,25,1,30,2
+MLFQ,0,Gin and Tonic,40,1,45,2
+MLFQ,1,Mojito,75,27,102,2
+MLFQ,2,Margarita,75,36,113,2
+MLFQ,1,Beer,25,1,31,2
+MLFQ,1,Gin and Tonic,40,1,46,2
+MLFQ,3,Tequila shot,20,43,68,0
+MLFQ,3,Pina Colada,100,0,105,1
+MLFQ,1,B52,200,20,225,2
+MLFQ,3,White Wine,25,82,109,2
+MLFQ,3,Pina Colada,100,1,105,2
+MLFQ,4,Margarita,75,0,80,0
+MLFQ,3,Cider,25,1,27,2
+MLFQ,4,Martini,60,1,62,1
+MLFQ,3,Gin and Tonic,40,5,46,2
+MLFQ,3,Bloody Mary,70,2,77,2
+MLFQ,5,Pina Colada,100,0,105,0
+MLFQ,6,Draft Beer,50,0,54,0
+MLFQ,5,Gin and Tonic,40,2,45,1
+MLFQ,6,Bloody Mary,70,0,72,1
+MLFQ,7,Gin and Tonic,40,54,99,0
+MLFQ,6,White Wine,25,1,31,2
+MLFQ,7,White Wine,25,25,55,1
+MLFQ,8,Beer,25,1,31,0
+MLFQ,6,Beer,25,0,30,2
+MLFQ,7,Mojito,75,1,80,2
+MLFQ,8,Pina Colada,100,42,144,1
+MLFQ,6,Pina Colada,100,83,183,2
+MLFQ,9,Cosmopolitan,65,1,70,0
+MLFQ,9,B52,200,1,203,1
+MLFQ,9,Bloody Mary,70,1,71,2
