@@ -1,85 +1,43 @@
 scheduler,patronID,drink,execTime,waitTime,turnaroundTime,queueLevel
 FCFS,0,White Wine,25,0,30,0
 FCFS,0,Cider,25,0,30,0
-FCFS,1,Cider,25,0,29,0
-FCFS,0,B52,200,0,205,0
-FCFS,1,Tequila shot,20,159,180,0
-FCFS,2,Bloody Mary,70,116,190,0
-FCFS,0,White Wine,25,84,113,0
-FCFS,1,Martini,60,101,166,0
-FCFS,2,Red Wine,25,0,25,0
-FCFS,0,Martini,60,0,64,0
-FCFS,1,Beer,25,42,68,0
-FCFS,2,Beer,25,0,30,0
-FCFS,0,Gin and Tonic,40,1,46,0
-FCFS,1,Mojito,75,26,106,0
-FCFS,2,Margarita,75,23,100,0
-FCFS,1,Beer,25,0,30,0
-FCFS,1,Gin and Tonic,40,0,44,0
-FCFS,3,Tequila shot,20,28,53,0
-FCFS,3,Pina Colada,100,1,103,0
-FCFS,1,B52,200,19,224,0
-FCFS,3,White Wine,25,87,117,0
-FCFS,3,Pina Colada,100,0,102,0
-FCFS,4,Margarita,75,0,80,0
-FCFS,3,Cider,25,1,30,0
-FCFS,4,Martini,60,0,65,0
-FCFS,3,Gin and Tonic,40,18,61,0
-FCFS,3,Bloody Mary,70,0,74,0
-FCFS,5,Pina Colada,100,0,104,0
-FCFS,6,Draft Beer,50,0,51,0
-FCFS,5,Gin and Tonic,40,2,47,0
-FCFS,6,Bloody Mary,70,0,72,0
-FCFS,7,Gin and Tonic,40,53,98,0
-FCFS,6,White Wine,25,0,28,0
-FCFS,7,White Wine,25,25,55,0
-FCFS,8,Beer,25,0,30,0
-FCFS,6,Beer,25,0,27,0
-FCFS,7,Mojito,75,0,80,0
-FCFS,8,Pina Colada,100,34,134,0
-FCFS,6,Pina Colada,100,81,185,0
-FCFS,9,Cosmopolitan,65,0,70,0
-FCFS,9,B52,200,0,202,0
-FCFS,9,Bloody Mary,70,0,72,0
-FCFS,0,White Wine,25,1,31,0
-FCFS,0,Cider,25,0,28,0
-FCFS,1,Cider,25,0,27,0
-FCFS,0,B52,200,1,206,0
-FCFS,1,Tequila shot,20,164,187,0
-FCFS,2,Bloody Mary,70,120,195,0
-FCFS,0,White Wine,25,87,115,0
-FCFS,1,Martini,60,101,164,0
+FCFS,1,Cider,25,0,30,0
+FCFS,0,B52,200,0,202,0
+FCFS,1,Tequila shot,20,164,189,0
+FCFS,2,Bloody Mary,70,124,199,0
+FCFS,0,White Wine,25,90,120,0
+FCFS,1,Martini,60,103,167,0
 FCFS,2,Red Wine,25,0,30,0
-FCFS,0,Martini,60,3,67,0
-FCFS,1,Beer,25,47,75,0
+FCFS,0,Martini,60,1,64,0
+FCFS,1,Beer,25,40,67,0
 FCFS,2,Beer,25,0,30,0
-FCFS,0,Gin and Tonic,40,3,48,0
-FCFS,1,Mojito,75,33,112,0
-FCFS,2,Margarita,75,21,99,0
-FCFS,1,Beer,25,0,27,0
-FCFS,1,Gin and Tonic,40,1,45,0
-FCFS,3,Tequila shot,20,39,64,0
-FCFS,3,Pina Colada,100,0,101,0
-FCFS,1,B52,200,21,227,0
-FCFS,3,White Wine,25,85,111,0
+FCFS,0,Gin and Tonic,40,2,45,0
+FCFS,1,Mojito,75,33,110,0
+FCFS,2,Margarita,75,17,92,0
+FCFS,1,Beer,25,0,29,0
+FCFS,1,Gin and Tonic,40,0,42,0
+FCFS,3,Tequila shot,20,37,60,0
+FCFS,3,Pina Colada,100,0,105,0
+FCFS,1,B52,200,19,219,0
+FCFS,3,White Wine,25,78,108,0
 FCFS,3,Pina Colada,100,0,103,0
-FCFS,4,Margarita,75,0,80,0
-FCFS,3,Cider,25,0,29,0
-FCFS,4,Martini,60,0,65,0
-FCFS,3,Gin and Tonic,40,13,57,0
-FCFS,3,Bloody Mary,70,0,74,0
-FCFS,5,Pina Colada,100,0,105,0
+FCFS,4,Margarita,75,0,77,0
+FCFS,3,Cider,25,4,30,0
+FCFS,4,Martini,60,0,64,0
+FCFS,3,Gin and Tonic,40,17,61,0
+FCFS,3,Bloody Mary,70,0,75,0
+FCFS,5,Pina Colada,100,0,100,0
 FCFS,6,Draft Beer,50,0,53,0
-FCFS,5,Gin and Tonic,40,1,41,0
-FCFS,6,Bloody Mary,70,0,75,0
-FCFS,7,Gin and Tonic,40,61,105,0
-FCFS,6,White Wine,25,1,31,0
-FCFS,7,White Wine,25,26,55,0
-FCFS,8,Beer,25,0,30,0
-FCFS,6,Beer,25,1,27,0
-FCFS,7,Mojito,75,0,77,0
-FCFS,8,Pina Colada,100,35,140,0
-FCFS,6,Pina Colada,100,87,192,0
-FCFS,9,Cosmopolitan,65,0,69,0
-FCFS,9,B52,200,0,201,0
-FCFS,9,Bloody Mary,70,0,75,0
+FCFS,5,Gin and Tonic,40,9,53,0
+FCFS,6,Bloody Mary,70,0,70,0
+FCFS,7,Gin and Tonic,40,50,95,0
+FCFS,6,White Wine,25,0,29,0
+FCFS,7,White Wine,25,22,48,0
+FCFS,8,Beer,25,0,26,0
+FCFS,6,Beer,25,0,29,0
+FCFS,7,Mojito,75,3,83,0
+FCFS,8,Pina Colada,100,30,131,0
+FCFS,6,Pina Colada,100,78,180,0
+FCFS,9,Cosmopolitan,65,0,70,0
+FCFS,9,B52,200,0,205,0
+FCFS,9,Bloody Mary,70,0,70,0

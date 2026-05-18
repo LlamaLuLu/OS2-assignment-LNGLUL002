@@ -172,7 +172,7 @@ The barman always serves the order with the lowest effective burst. Short orders
 
 | Scheduler | Mean Wait | Median Wait | Std Dev | Max Wait | Starvation (>3s) |
 |-----------|-----------|-------------|---------|----------|------------------|
-| FCFS | 1192 ms | 772 ms | 1611 ms | 9742 ms | 2.9% |
+| FCFS | 1232 ms | 799 ms | 1624 ms | 9742 ms | 3.0% |
 | SJF | 674 ms | 60 ms | 1671 ms | 9956 ms | 8.4% |
 | Priority | 775 ms | 71 ms | 1926 ms | 10464 ms | 9.3% |
 | MLFQ | 1040 ms | 665 ms | 1067 ms | 5773 ms | 2.5% |
