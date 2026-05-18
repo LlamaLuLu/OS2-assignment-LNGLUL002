@@ -71,7 +71,7 @@ make run ARGS="30 2 5 30"
 make clean
 ```
 
-> **Note:** `make clean` also removes the `results/` folder. Back up your data first.
+> **Note:** `make clean` also removes the `results/` folder. Back up the data first.
 
 ---
 

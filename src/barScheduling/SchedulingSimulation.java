@@ -4,16 +4,9 @@
 package barScheduling;
 // the main class, starts all threads
 
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Locale;
 import java.util.Random;
-import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CountDownLatch;
 
 public class SchedulingSimulation {
@@ -31,12 +24,12 @@ public class SchedulingSimulation {
     static int[] arrivalTimes;
     static int[] drinksPerPatron;
 
- 
+    // -------- EXTENSION: Adaptive SJF
     private static void validateScheduler(int sched) {
-        if (sched < 0 || sched > 3) {
+        if (sched < 0 || sched > 4) {
             throw new IllegalArgumentException(
                 "Invalid scheduler " + sched +
-                ". Valid values are: 0=FCFS, 1=SJF, 2=Priority, 3=MLFQ."
+                ". Valid values are: 0=FCFS, 1=SJF, 2=Priority, 3=MLFQ, 4=ASJF."
             );
         }
     }
@@ -51,6 +44,9 @@ public class SchedulingSimulation {
                 return "PRIORITY";
             case 3:
                 return "MLFQ";
+            // -------- EXTENSION: Adaptive SJF
+            case 4:
+                return "ASJF";
             default:
                 throw new IllegalArgumentException(
                     "Invalid scheduler " + sched +

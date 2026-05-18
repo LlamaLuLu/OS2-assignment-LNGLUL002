@@ -17,9 +17,10 @@ RESULTS_DIR = "results"          # folder containing the CSVs
 OUT_DIR     = "results/graphs"   # where PNGs will be saved
 os.makedirs(OUT_DIR, exist_ok=True)
 
-SCHEDULERS  = ["FCFS", "SJF", "PRIORITY", "MLFQ"]
-COLORS      = {"FCFS": "#4C72B0", "SJF": "#DD8452",
-               "PRIORITY": "#55A868", "MLFQ": "#C44E52"}
+SCHEDULERS = ["FCFS", "SJF", "PRIORITY", "MLFQ", "ASJF"]
+COLORS     = {"FCFS": "#4C72B0", "SJF": "#DD8452",
+               "PRIORITY": "#55A868", "MLFQ": "#C44E52",
+               "ASJF": "#9467BD"}
 PATRON_COUNTS = [10, 30, 50]
 
 # ── load data ─────────────────────────────────────────────────────────────────

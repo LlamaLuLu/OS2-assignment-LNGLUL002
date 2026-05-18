@@ -49,6 +49,10 @@ public class Barman extends Thread {
 
     private final String schedulerName;
 
+    // -------- EXTENSION: Adaptive SJF queue and tuning constant
+    private LinkedBlockingQueue<DrinkOrder> asjfQueue;
+    private static final int ASJF_BOOST_FACTOR = 8; // ms of wait per ms of burst reduction
+
  
 
  //=NO CHANGE AREA BEINGS=========================================================   
@@ -85,6 +89,11 @@ public class Barman extends Thread {
                 q2 = new LinkedBlockingQueue<DrinkOrder>();
                 drinksServedPerPatron = new ConcurrentHashMap<Integer, Integer>();
                 break;
+            
+            // -------- EXTENSION: Adaptive SJF
+            case 4:
+                asjfQueue = new LinkedBlockingQueue<DrinkOrder>();
+                break;
 
             default:
                 throw new IllegalArgumentException(
@@ -104,6 +113,9 @@ public class Barman extends Thread {
                 return "PRIORITY";
             case 3:
                 return "MLFQ";
+            // -------- EXTENSION: Adaptive SJF
+            case 4:
+                return "ASJF";
             default:
                 throw new IllegalArgumentException(
                         "Invalid scheduler " + schedAlg +
@@ -136,6 +148,11 @@ public class Barman extends Thread {
                 int level = initialQueueFor(order);
                 order.setQueueLevel(level);
                 enqueueMLFQ(order, level);
+                break;
+
+            // -------- EXTENSION: Adaptive SJF
+            case 4:
+                asjfQueue.put(order);
                 break;
 
             default:
@@ -238,6 +255,47 @@ public class Barman extends Thread {
         }
     }
 
+    // -------- EXTENSION: Adaptive SJF
+    private double effectiveBurst(DrinkOrder order) {
+        long waited = System.currentTimeMillis() - order.getEnqueueTime();
+        return order.getExecutionTime() - (double) waited / ASJF_BOOST_FACTOR;
+    }
+
+    private DrinkOrder takeNextASJFOrder() throws InterruptedException {
+        while (true) {
+            if (asjfQueue.isEmpty()) {
+                TimeUnit.MILLISECONDS.sleep(1);
+                continue;
+            }
+
+            // drain queue into a list
+            java.util.List<DrinkOrder> candidates = new java.util.ArrayList<>();
+            asjfQueue.drainTo(candidates);
+
+            if (candidates.isEmpty()) {
+                TimeUnit.MILLISECONDS.sleep(1);
+                continue;
+            }
+
+            // find order with lowest effective burst right now
+            DrinkOrder best = candidates.get(0);
+            for (DrinkOrder o : candidates) {
+                if (effectiveBurst(o) < effectiveBurst(best)) {
+                    best = o;
+                }
+            }
+
+            // re-enqueue everyone except the winner
+            for (DrinkOrder o : candidates) {
+                if (o != best) {
+                    asjfQueue.put(o);
+                }
+            }
+
+            return best;
+        }
+    }
+
     private void recordServedDrink(DrinkOrder order) {
         if (schedAlg == 3) {
             int patron = order.getOrderer();
@@ -264,6 +322,10 @@ public class Barman extends Thread {
                     break;
                 case 3:
                     runMLFQ();
+                    break;
+                // -------- EXTENSION: Adaptive SJF
+                case 4:
+                    runASJF();
                     break;
                 default:
                     throw new IllegalStateException(
@@ -315,7 +377,13 @@ public class Barman extends Thread {
         }
     }
 
-  
+    // -------- EXTENSION: Adaptive SJF
+    private void runASJF() throws InterruptedException, IOException {
+        while (true) {
+            DrinkOrder currentOrder = takeNextASJFOrder();
+            processOrder(currentOrder, "---Barman preparing drink for patron " + currentOrder);
+        }
+    }
 
     private void processOrder(DrinkOrder currentOrder, String startMessage)
             throws InterruptedException, IOException {

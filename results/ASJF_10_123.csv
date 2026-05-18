@@ -1,0 +1,42 @@
+scheduler,patronID,drink,execTime,waitTime,turnaroundTime,queueLevel
+ASJF,0,Beer,25,0,30,0
+ASJF,0,White Wine,25,1,29,0
+ASJF,1,Margarita,75,0,75,0
+ASJF,0,B52,200,1,205,0
+ASJF,1,Tequila shot,20,127,152,0
+ASJF,1,Beer,25,0,30,0
+ASJF,1,Cosmopolitan,65,1,68,0
+ASJF,1,Draft Beer,50,0,53,0
+ASJF,2,White Wine,25,43,73,0
+ASJF,3,Pina Colada,100,11,112,0
+ASJF,1,Gin and Tonic,40,28,70,0
+ASJF,4,B52,200,78,280,0
+ASJF,2,Beer,25,193,223,0
+ASJF,5,White Wine,25,189,218,0
+ASJF,4,White Wine,25,50,78,0
+ASJF,3,Draft Beer,50,215,270,0
+ASJF,1,Cosmopolitan,65,236,304,0
+ASJF,5,White Wine,25,1,31,0
+ASJF,4,Cosmopolitan,65,4,72,0
+ASJF,6,Beer,25,60,88,0
+ASJF,3,Gin and Tonic,40,96,141,0
+ASJF,1,Mojito,75,124,204,0
+ASJF,6,White Wine,25,25,54,0
+ASJF,5,Gin and Tonic,40,102,146,0
+ASJF,3,Martini,60,41,104,0
+ASJF,6,Martini,60,2,65,0
+ASJF,5,Pina Colada,100,59,163,0
+ASJF,3,Draft Beer,50,98,153,0
+ASJF,6,Vodka shot,20,45,70,0
+ASJF,7,Red Wine,25,70,100,0
+ASJF,5,Vodka shot,20,1,23,0
+ASJF,5,Beer,25,0,29,0
+ASJF,3,Tequila shot,20,19,44,0
+ASJF,3,Cider,25,2,28,0
+ASJF,5,Mojito,75,2,81,0
+ASJF,8,Tequila shot,20,0,22,0
+ASJF,8,Pina Colada,100,0,105,0
+ASJF,9,Cosmopolitan,65,103,170,0
+ASJF,8,White Wine,25,1,28,0
+ASJF,9,Vodka shot,20,26,49,0
+ASJF,8,Pina Colada,100,0,104,0

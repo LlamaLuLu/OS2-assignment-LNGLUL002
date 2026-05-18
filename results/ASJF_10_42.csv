@@ -1,0 +1,43 @@
+scheduler,patronID,drink,execTime,waitTime,turnaroundTime,queueLevel
+ASJF,0,White Wine,25,0,27,0
+ASJF,0,Cider,25,1,27,0
+ASJF,1,Cider,25,0,29,0
+ASJF,0,B52,200,1,206,0
+ASJF,1,Tequila shot,20,153,174,0
+ASJF,0,White Wine,25,10,40,0
+ASJF,2,Bloody Mary,70,140,211,0
+ASJF,1,Martini,60,99,164,0
+ASJF,0,Red Wine,25,0,28,0
+ASJF,2,Martini,60,1,66,0
+ASJF,1,Beer,25,42,71,0
+ASJF,0,Beer,25,0,30,0
+ASJF,2,Gin and Tonic,40,1,46,0
+ASJF,1,Mojito,75,23,103,0
+ASJF,2,Margarita,75,1,77,0
+ASJF,1,Beer,25,1,29,0
+ASJF,1,Gin and Tonic,40,1,46,0
+ASJF,3,Tequila shot,20,20,45,0
+ASJF,3,Pina Colada,100,0,104,0
+ASJF,1,B52,200,22,224,0
+ASJF,3,White Wine,25,81,111,0
+ASJF,3,Pina Colada,100,0,105,0
+ASJF,4,Margarita,75,1,79,0
+ASJF,3,Cider,25,12,38,0
+ASJF,4,Martini,60,1,66,0
+ASJF,3,Gin and Tonic,40,17,59,0
+ASJF,3,Bloody Mary,70,1,74,0
+ASJF,5,Pina Colada,100,1,105,0
+ASJF,6,Draft Beer,50,1,54,0
+ASJF,5,Gin and Tonic,40,6,50,0
+ASJF,6,Bloody Mary,70,0,72,0
+ASJF,7,Gin and Tonic,40,56,101,0
+ASJF,6,White Wine,25,1,28,0
+ASJF,7,White Wine,25,26,51,0
+ASJF,8,Beer,25,1,29,0
+ASJF,6,Beer,25,0,31,0
+ASJF,7,Mojito,75,9,88,0
+ASJF,8,Pina Colada,100,35,137,0
+ASJF,6,Pina Colada,100,83,188,0
+ASJF,9,Cosmopolitan,65,1,66,0
+ASJF,9,B52,200,1,206,0
+ASJF,9,Bloody Mary,70,1,71,0
