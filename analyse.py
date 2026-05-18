@@ -56,7 +56,7 @@ for patch, sched in zip(bp["boxes"], SCHEDULERS):
     patch.set_facecolor(COLORS[sched])
     patch.set_alpha(0.75)
 
-ax.set_xticks(range(1, 5))
+ax.set_xticks(range(1, len(SCHEDULERS) + 1))
 ax.set_xticklabels(SCHEDULERS, fontsize=12)
 ax.set_ylabel("Wait Time (ms)", fontsize=12)
 ax.set_title("Figure 1 – Wait Time Distribution per Scheduler (all runs)", fontsize=13)
@@ -83,7 +83,7 @@ for patch, sched in zip(bp["boxes"], SCHEDULERS):
     patch.set_facecolor(COLORS[sched])
     patch.set_alpha(0.75)
 
-ax.set_xticks(range(1, 5))
+ax.set_xticks(range(1, len(SCHEDULERS) + 1))
 ax.set_xticklabels(SCHEDULERS, fontsize=12)
 ax.set_ylabel("Turnaround Time (ms)", fontsize=12)
 ax.set_title("Figure 2 – Turnaround Time Distribution per Scheduler (all runs)", fontsize=13)
@@ -137,7 +137,7 @@ THRESHOLD = 3000   # ms
 fig, ax = plt.subplots(figsize=(10, 5))
 x      = np.arange(len(PATRON_COUNTS))
 width  = 0.2
-offsets = [-1.5, -0.5, 0.5, 1.5]
+offsets = [-2, -1, 0, 1, 2]
 
 for i, sched in enumerate(SCHEDULERS):
     pcts = []

@@ -4,7 +4,7 @@ mkdir -p results
 
 PATRONS=(10 30 50)
 SEEDS=(42 123 999)
-SCHEDS=(4)
+SCHEDS=(1 2 3 4)
 
 for n in "${PATRONS[@]}"; do
     for seed in "${SEEDS[@]}"; do
