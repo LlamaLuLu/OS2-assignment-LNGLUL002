@@ -39,6 +39,7 @@ This project simulates CPU process scheduling using a bar scenario. Patrons (pro
 ├── Makefile
 ├── run_experiments.sh                  # Automated experiment runner
 ├── analyse.py                          # Data analysis and graphing script
+├── validate.py                         # Data validation and sanity checks
 └── README.md
 ```
 
@@ -126,9 +127,38 @@ turnaroundTime ≈ waitTime + execTime  (small overhead from real clock)
 
 ---
 
+## Validation
+
+Run the validation script to check all CSV files for data integrity before analysis:
+
+```bash
+python3 validate.py
+```
+
+This performs 8 checks across all records:
+
+| Check | Description |
+|-------|-------------|
+| Row count consistency | All schedulers produce equal rows for the same seed + patron count |
+| Timing correctness | turnaround > wait; turnaround ≈ wait + execTime within 50ms |
+| No negative times | No negative wait or turnaround values |
+| Queue level integrity | Non-MLFQ rows have level 0; MLFQ rows have levels in {0,1,2} |
+| Scheduler name match | CSV contents match filename |
+| Patron ID range | All IDs within [0, noPatrons-1] |
+| Execution time validity | All exec times match known drink prep times |
+
+Expected output after clean runs:
+```
+SUMMARY: 8 passed, 0 failed
+Total rows validated: 6,167 across 45 files
+✅ All checks passed. Data is ready for analysis.
+```
+
+---
+
 ## Analysis
 
-Once results are generated, run the analysis script to produce all graphs:
+Once results are validated, run the analysis script to produce all graphs:
 
 ```bash
 python3 analyse.py
@@ -162,7 +192,7 @@ ASJF is an improved scheduling algorithm designed to fix SJF's starvation proble
 effectiveBurst = execTime - (timeWaited / BOOST_FACTOR)
 ```
 
-The barman always serves the order with the lowest effective burst. Short orders are still served first under low load, but long orders gradually rise in priority as they wait — preventing indefinite starvation. With `BOOST_FACTOR=8`, no order waits longer than ~1.6 seconds before it overtakes all newly-arrived orders.
+The barman always serves the order with the lowest effective burst. Short orders are still served first under low load, but long orders gradually rise in priority as they wait — preventing starvation. With `BOOST_FACTOR=8`, no order waits longer than ~1.6 seconds before it overtakes all newly-arrived orders.
 
 **Key difference from plain SJF:** SJF sorts orders once at insertion time. ASJF re-evaluates priorities dynamically every time the barman picks the next order, by draining the queue into a list and selecting the current minimum.
 
@@ -176,9 +206,9 @@ The barman always serves the order with the lowest effective burst. Short orders
 | SJF | 674 ms | 60 ms | 1671 ms | 9956 ms | 8.4% |
 | Priority | 775 ms | 71 ms | 1926 ms | 10464 ms | 9.3% |
 | MLFQ | 1040 ms | 665 ms | 1067 ms | 5773 ms | 2.5% |
-| **ASJF** | 924 ms | 692 ms | 879 ms | 4070 ms | 1.6% |
+| **ASJF** | **924 ms** | **692 ms** | **879 ms** | **4070 ms** | **1.6%** |
 
-**Recommendation:** ASJF is proposed as the best overall algorithm — it targets SJF's starvation weakness directly while retaining low median wait times, making it the most suitable choice for a bar setting where both speed and fairness matter.
+**Recommendation:** ASJF outperforms all five schedulers on starvation (1.6%), max wait (4070ms), and predictability (std dev 879ms), while maintaining a median wait comparable to MLFQ. It is the strongest overall choice for a bar setting where fairness and predictability matter alongside efficiency.
 
 ---
 
@@ -195,4 +225,4 @@ The barman always serves the order with the lowest effective burst. Short orders
 
 ## AI Usage
 
-Claude (Anthropic) was used for coding assistance during this assignment — specifically for implementing `recordCompletedOrder()`, designing and implementing the ASJF bonus algorithm, writing `run_experiments.sh`, and generating `analyse.py`. All experimental runs, data, graphs, and conclusions are based on actual simulation outputs. No AI tool was used to fabricate data or invent results.
+Claude (Anthropic) was used for coding assistance during this assignment — specifically for implementing `recordCompletedOrder()`, designing and implementing the ASJF bonus algorithm, writing `run_experiments.sh`, and generating `analyse.py` and `validate.py`. All experimental runs, data, graphs, and conclusions are based on actual simulation outputs. No AI tool was used to fabricate data or invent results.
