@@ -178,8 +178,6 @@ The barman always serves the order with the lowest effective burst. Short orders
 | MLFQ | 1040 ms | 665 ms | 1067 ms | 5773 ms | 2.5% |
 | **ASJF** | 924 ms | 692 ms | 879 ms | 4070 ms | 1.6% |
 
-> ASJF results to be filled in after experimental runs.
-
 **Recommendation:** ASJF is proposed as the best overall algorithm — it targets SJF's starvation weakness directly while retaining low median wait times, making it the most suitable choice for a bar setting where both speed and fairness matter.
 
 ---
