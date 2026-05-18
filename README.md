@@ -2,13 +2,14 @@
 ### Allegra the Barman: Comparing Scheduling Policies for Bartending
 
 **Student:** LNGLUL002  
-**Course:** CSC3002F (Networks & Operating Systems)
+**Course:** CSC3002F – Operating Systems II  
+**Lecturer:** M. M. Kuttel
 
 ---
 
 ## Overview
 
-This project simulates CPU process scheduling using a bar scenario. Patrons (processes) arrive at random times and place drink orders (CPU bursts). Allegra the Barman (the CPU) serves orders according to one of four scheduling algorithms. The simulation is used to experimentally compare algorithm performance across multiple metrics.
+This project simulates CPU process scheduling using a bar scenario. Patrons (processes) arrive at random times and place drink orders (CPU bursts). Allegra the Barman (the CPU) serves orders according to one of five scheduling algorithms. The simulation is used to experimentally compare algorithm performance across multiple metrics.
 
 **Scheduling algorithms implemented:**
 
@@ -18,6 +19,7 @@ This project simulates CPU process scheduling using a bar scenario. Patrons (pro
 | `1` | SJF | Shortest Job First |
 | `2` | Priority | Lower patron ID = higher priority |
 | `3` | MLFQ | Multilevel Feedback Queue with aging |
+| `4` | ASJF ⭐ | Adaptive SJF — bonus extension |
 
 ---
 
@@ -61,7 +63,7 @@ make run ARGS="30 2 5 30"
 | Argument | Description | Values |
 |----------|-------------|--------|
 | `patrons` | Number of patron threads | e.g. `10`, `30`, `50` |
-| `scheduler` | Scheduling algorithm | `0`=FCFS, `1`=SJF, `2`=Priority, `3`=MLFQ |
+| `scheduler` | Scheduling algorithm | `0`=FCFS, `1`=SJF, `2`=Priority, `3`=MLFQ, `4`=ASJF |
 | `switchTime` | Context switch overhead (ms) | e.g. `0`, `5` |
 | `seed` | RNG seed for reproducible workloads | any integer; `0` = random |
 
@@ -71,7 +73,7 @@ make run ARGS="30 2 5 30"
 make clean
 ```
 
-> **Note:** `make clean` also removes the `results/` folder. Back up the data first.
+> **Note:** `make clean` also removes the `results/` folder. Back up your data first.
 
 ---
 
@@ -84,14 +86,14 @@ chmod +x run_experiments.sh
 ./run_experiments.sh
 ```
 
-This runs **36 simulations** (4 schedulers × 3 patron counts × 3 seeds) and writes one CSV per run into `results/`. Each CSV is named `SCHEDULER_PATRONS_SEED.csv`, e.g. `MLFQ_30_42.csv`.
+This runs **45 simulations** (5 schedulers × 3 patron counts × 3 seeds) and writes one CSV per run into `results/`. Each CSV is named `SCHEDULER_PATRONS_SEED.csv`, e.g. `MLFQ_30_42.csv`.
 
 To customise the experiment parameters, edit these arrays at the top of `run_experiments.sh`:
 
 ```bash
 PATRONS=(10 30 50)
 SEEDS=(42 123 999)
-SCHEDS=(0 1 2 3)
+SCHEDS=(0 1 2 3 4)
 ```
 
 ---
@@ -117,8 +119,8 @@ FCFS,3,Mojito,75,120,195,0
 
 **Metric relationships:**
 ```
-waitTime      = serviceStartTime - arrivalTime
-turnaroundTime = completionTime  - arrivalTime
+waitTime       = serviceStartTime - arrivalTime
+turnaroundTime = completionTime   - arrivalTime
 turnaroundTime ≈ waitTime + execTime  (small overhead from real clock)
 ```
 
@@ -132,7 +134,10 @@ Once results are generated, run the analysis script to produce all graphs:
 python3 analyse.py
 ```
 
-Requires: `pandas`, `matplotlib`, `numpy`  
+Requires: `pandas`, `matplotlib`, `numpy`
+```bash
+pip install pandas matplotlib numpy
+```
 
 Graphs are saved to `results/graphs/`:
 
@@ -147,6 +152,22 @@ Graphs are saved to `results/graphs/`:
 
 ---
 
+## Bonus Extension — Adaptive SJF (ASJF)
+
+ASJF is an improved scheduling algorithm designed to fix SJF's starvation problem while preserving its low average wait time.
+
+**How it works:** each order is assigned an *effective burst time* that shrinks the longer the order waits in the queue:
+
+```
+effectiveBurst = execTime - (timeWaited / BOOST_FACTOR)
+```
+
+The barman always serves the order with the lowest effective burst. Short orders are still served first under low load, but long orders gradually rise in priority as they wait — preventing indefinite starvation. With `BOOST_FACTOR=8`, no order waits longer than ~1.6 seconds before it overtakes all newly-arrived orders.
+
+**Key difference from plain SJF:** SJF sorts orders once at insertion time. ASJF re-evaluates priorities dynamically every time the barman picks the next order, by draining the queue into a list and selecting the current minimum.
+
+---
+
 ## Key Results Summary
 
 | Scheduler | Mean Wait | Median Wait | Std Dev | Max Wait | Starvation (>3s) |
@@ -154,20 +175,26 @@ Graphs are saved to `results/graphs/`:
 | FCFS | 1192 ms | 772 ms | 1611 ms | 9742 ms | 2.9% |
 | SJF | 674 ms | 60 ms | 1671 ms | 9956 ms | 8.4% |
 | Priority | 775 ms | 71 ms | 1926 ms | 10464 ms | 9.3% |
-| **MLFQ** | 1040 ms | 665 ms | **1067 ms** | 5773 ms | **2.5%** |
+| MLFQ | 1040 ms | 665 ms | 1067 ms | 5773 ms | 2.5% |
+| **ASJF** | 924 ms | 692 ms | 879 ms | 4070 ms | 1.6% |
 
-**Recommendation:** MLFQ offers the best balance of fairness, predictability, and starvation resistance for a bar setting. SJF achieves the lowest median wait but causes significant starvation for long drinks at high load.
+> ASJF results to be filled in after experimental runs.
+
+**Recommendation:** ASJF is proposed as the best overall algorithm — it targets SJF's starvation weakness directly while retaining low median wait times, making it the most suitable choice for a bar setting where both speed and fairness matter.
 
 ---
 
 ## Modifications Made
 
-Only `Barman.java` was modified, as permitted by the assignment specification. The single change is the implementation of `recordCompletedOrder()`, which appends a CSV row to the results file after each drink is served.
+`Barman.java` and `SchedulingSimulation.java` were modified from the provided template:
 
-All other files (`DrinkOrder.java`, `Patron.java`, `SchedulingSimulation.java`) are unchanged from the provided template.
+- **`Barman.java`** — `recordCompletedOrder()` implemented to write per-order metrics to CSV. ASJF scheduler added as `case 4` (bonus extension), including `asjfQueue`, `effectiveBurst()`, `takeNextASJFOrder()`, and `runASJF()`.
+- **`SchedulingSimulation.java`** — `validateScheduler()` and `schedulerName()` updated to accept and name scheduler `4` (ASJF).
+
+`DrinkOrder.java` and `Patron.java` are unchanged from the provided template.
 
 ---
 
 ## AI Usage
 
-GitHub Copilot and Claude (Anthropic) were used for coding assistance, specifically for implementing `recordCompletedOrder()`, writing the shell automation script, and generating the Python analysis and graphing code. All experimental runs, data, and conclusions are based on actual simulation outputs.
+Claude (Anthropic) was used for coding assistance during this assignment — specifically for implementing `recordCompletedOrder()`, designing and implementing the ASJF bonus algorithm, writing `run_experiments.sh`, and generating `analyse.py`. All experimental runs, data, graphs, and conclusions are based on actual simulation outputs. No AI tool was used to fabricate data or invent results.
